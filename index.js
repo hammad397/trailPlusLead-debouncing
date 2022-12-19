@@ -12,6 +12,7 @@ const debounce = (func, delay, option = { leading: false, trailing: true }) => {
         let isInvoked = false;
         if(timeoutId === null && option.leading){
             func.call(this, ...args);
+            isInvoked = true;
         }
         clearTimeout(timeoutId);
         timeoutId = setTimeout(() => {
